@@ -31,13 +31,4 @@ class LithosphereSectionTest {
         testLitSection.extraWaterPourOff(litSection2, litSection3, litSection4);
         assertEquals(2, testLitSection.getTrappedWater());
     }
-
-    @Test
-    void test03() {
-        testLitSection.setWaterHeight(10);
-        LithosphereSection litSection2 = null;
-
-        testLitSection.extraWaterPourOff(litSection2);
-        assertEquals(0, testLitSection.getTrappedWater());
-    }
 }

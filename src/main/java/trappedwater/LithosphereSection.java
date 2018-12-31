@@ -15,16 +15,10 @@ public class LithosphereSection {
         this.waterHeight = _waterHeight;
     }
 
-    public void extraWaterPourOff(LithosphereSection... neighborVerticals) {
-        for (LithosphereSection neighbor : neighborVerticals) {
-            boolean seaIsNear = (neighbor == null);
-            if (seaIsNear) {
-                this.waterHeight = 0;
-                return;
-            } else {
+    public void extraWaterPourOff(LithosphereSection... neighborSections) {
+        for (LithosphereSection neighbor : neighborSections) {
                 int support = Integer.max(neighbor.waterHeight, neighbor.groundHeight);
                 this.waterHeight = Integer.min(this.waterHeight, support);
-            }
         }
     }
 
