@@ -36,7 +36,7 @@ public class Island {
             int countOfPuddlesBefore = getTrappedWater();
             pourOffToNorthLeft();
             pourOffToSouthRight();
-            countOfPuddlesChanges = getTrappedWater() != countOfPuddlesBefore;
+            countOfPuddlesChanges = (getTrappedWater() != countOfPuddlesBefore);
         }
     }
 
