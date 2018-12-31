@@ -45,7 +45,7 @@ public class Island {
             for (int j = 0; j < this.m; j++) {
                 boolean isBorder = (i == 0) || (i == n - 1) || (j == 0) || (j == m - 1);
                 if (isBorder) {
-                    this.litSections[i][j].setWaterHeight(0);
+                    this.litSections[i][j].extraWaterPourOff();
                 }
             }
         }

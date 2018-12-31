@@ -28,8 +28,8 @@ public class Beach {
 
     public void extraWaterPourOff() {
         // Pour water on boarders
-        this.litSections[0].setWaterHeight(0);
-        this.litSections[m - 1].setWaterHeight(0);
+        this.litSections[0].extraWaterPourOff();
+        this.litSections[m - 1].extraWaterPourOff();
 
         // Pour water to the left
         for (int i = 1; i < m - 1; i++) {
