@@ -7,15 +7,15 @@ public class Beach {
 
     public Beach(int[] _groundScheme) {
         this.m = _groundScheme.length;
-        this.litSections = new LithosphereSection[m];
-        for (int i = 0; i < m; i++) {
+        this.litSections = new LithosphereSection[this.m];
+        for (int i = 0; i < this.m; i++) {
             this.litSections[i] = new LithosphereSection(_groundScheme[i]);
         }
     }
 
     public void takeWaveFromLeft(int _waveHeight) {
         boolean waveStillMoves = true;
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < this.m; i++) {
             if (waveStillMoves) {
                 if (_waveHeight > this.litSections[i].groundHeight) {
                     this.litSections[i].setWaterHeight(_waveHeight);
@@ -29,16 +29,16 @@ public class Beach {
     public void extraWaterPourOff() {
         // Pour water on boarders
         this.litSections[0].extraWaterPourOff();
-        this.litSections[m - 1].extraWaterPourOff();
+        this.litSections[this.m - 1].extraWaterPourOff();
 
         // Pour water to the left
-        for (int i = 1; i < m - 1; i++) {
-            this.litSections[i].extraWaterPourOff(litSections[i - 1]);
+        for (int i = 1; i < this.m - 1; i++) {
+            this.litSections[i].extraWaterPourOff(this.litSections[i - 1]);
         }
 
         // Pour water to the right
-        for (int i = m - 2; i > 0; i--) {
-            litSections[i].extraWaterPourOff(litSections[i + 1]);
+        for (int i = this.m - 2; i > 0; i--) {
+            this.litSections[i].extraWaterPourOff(this.litSections[i + 1]);
         }
     }
 

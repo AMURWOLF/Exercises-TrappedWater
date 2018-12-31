@@ -20,17 +20,17 @@ public class LithosphereSection {
     public void extraWaterPourOff(LithosphereSection... neighborSections) {
         if (hasPrecipiceForWater(neighborSections)) {
             this.waterHeight = 0;
-        } else {        
+        } else {
             for (LithosphereSection neighbor : neighborSections) {
                 int support = Integer.max(neighbor.waterHeight, neighbor.groundHeight);
                 this.waterHeight = Integer.min(this.waterHeight, support);
             }
         }
     }
-    
+
     private boolean hasPrecipiceForWater(LithosphereSection... neighborSections) {
-        return neighborSections == null 
-                || neighborSections.length == 0 
+        return neighborSections == null
+                || neighborSections.length == 0
                 || Arrays.asList(neighborSections).contains(null);
     }
 

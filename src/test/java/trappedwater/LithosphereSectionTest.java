@@ -14,7 +14,7 @@ class LithosphereSectionTest {
     static void setUpBeforeClass() throws Exception {
         testLitSection = new LithosphereSection(5);
     }
-    
+
     @BeforeEach
     void setUp() throws Exception {
         testLitSection.setWaterHeight(10);
@@ -41,14 +41,14 @@ class LithosphereSectionTest {
         testLitSection.extraWaterPourOff();
         assertEquals(0, testLitSection.getTrappedWater());
     }
-    
+
     @Test
     void test04() {
         LithosphereSection[] sections = null;
         testLitSection.extraWaterPourOff(sections);
         assertEquals(0, testLitSection.getTrappedWater());
     }
-    
+
     @Test
     void test05() {
         LithosphereSection litSection2 = null;
